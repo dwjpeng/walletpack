@@ -125,7 +125,7 @@ export default class KeyPairService {
         if(identity) {
             return Keypair.fromJson({
                 name:identity.name,
-                publicKeys:[{blockchain:'eos', key:publicKey}],
+                publicKeys:[{blockchain:'roxe', key:publicKey}],
                 privateKey:identity.privateKey
             });
         }

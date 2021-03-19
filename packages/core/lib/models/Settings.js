@@ -37,8 +37,8 @@ export default class Settings {
 
 	    // {contract:[actions]}
 	    this.blacklistActions = {
-	    	'eos::eosio':['updateauth', 'linkauth'],
-	    	'eos::eosio.msig':['approve'],
+	    	'roxe::roxe':['updateauth', 'linkauth'],
+	    	'roxe::roxe.msig':['approve'],
 	    };
 
 	    this.balanceFilters = {};

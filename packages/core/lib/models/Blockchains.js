@@ -1,6 +1,7 @@
 
 export let Blockchains = {
-    EOSIO:'eos',
+    EOS:'eos',
+    ROXE:'roxe',
     ETH:'eth',
     TRX:'trx',
     BTC:'btc',
@@ -12,7 +13,8 @@ export let BlockchainsArray = Object.keys(Blockchains).map(key => ({key, value:B
 export let blockchainName = x => {
     switch(x){
         case 'btc': return 'Bitcoin';
-        case Blockchains.EOSIO: return 'EOSIO';
+        case Blockchains.ROXE: return 'Roxe Chain';
+        case Blockchains.EOS: return 'EOS';
         case Blockchains.ETH: return 'Ethereum';
         case Blockchains.TRX: return 'Tron';
         case Blockchains.BTC: return 'Bitcoin';

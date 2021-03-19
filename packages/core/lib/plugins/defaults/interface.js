@@ -36,20 +36,20 @@ export default class PluginInterface extends Plugin {
 
 	/***
 	 * Account formatter turns an `Account` model into a string which is used as the recipient of transactions.
-	 * For instance in EOSIO blockchains the formatter would return `account.name`, but in Ethereum blockchains it would return
+	 * For instance in ROXE blockchains the formatter would return `account.name`, but in Ethereum blockchains it would return
 	 * `account.publicKey` which denotes the address instead of a name.
 	 */
 	accountFormatter(account){}
 
 	/***
 	 * Returnable account is a POJO that is returned to interacting applications.
-	 * For instance, in EOSIO blockchains a name is required, however in Ethereum blockchains only a publicKey/address is required.
+	 * For instance, in ROXE blockchains a name is required, however in Ethereum blockchains only a publicKey/address is required.
 	 */
 	returnableAccount(account){}
 
 	/***
 	 * This is a UI helper which defines what a placeholder value for a contract might be.
-	 * For instance in Ethereum blockchains it might be `0x...`, while in EOSIO blockchains it might be `eosio.token`
+	 * For instance in Ethereum blockchains it might be `0x...`, while in ROXE blockchains it might be `roxe.token`
 	 */
 	contractPlaceholder(){}
 
@@ -64,14 +64,14 @@ export default class PluginInterface extends Plugin {
 	 * for a node connection.
 	 * THIS MUST RETURN A NETWORK CLASS
 	 * EXAMPLE:
-	 return new Network('EOS Mainnet', 'https', 'nodes.get-scatter.com', 443, Blockchains.EOSIO, MAINNET_CHAIN_ID)
+	 return new Network('ROXE Mainnet', 'https', 'nodes.get-scatter.com', 443, Blockchains.ROXE, MAINNET_CHAIN_ID)
 	 */
 	getEndorsedNetwork(){}
 
 	/***
 	 * Checks if a given network is the endorsed network (or a network matching the chainID)
 	 * EXAMPLE:
-	 return network.blockchain === Blockchains.EOSIO && network.chainId === MAINNET_CHAIN_ID;
+	 return network.blockchain === Blockchains.ROXE && network.chainId === MAINNET_CHAIN_ID;
 	 */
 	isEndorsedNetwork(network){}
 
@@ -97,14 +97,14 @@ export default class PluginInterface extends Plugin {
 
 	/***
 	 * This might need to be re-designed to be dynamic, however this designates a
-	 * blockchain as using resources like CPU/NET/RAM on EOSIO blockchains.
+	 * blockchain as using resources like CPU/NET/RAM on ROXE blockchains.
 	 * If this is true, then `getResourcesFor(account)`, `needsResources(account)` and `addResources(account)` must also be included.
-	 * For examples check the EOSIO plugin.
+	 * For examples check the ROXE plugin.
 	 */
 	usesResources(){ return false; }
 
 	/***
-	 * Accounts are sometimes required to be created or imported before being available (such is the case in EOSIO blockchains).
+	 * Accounts are sometimes required to be created or imported before being available (such is the case in ROXE blockchains).
 	 * If this is set to false, a dummy account will always be created using the publicKey/address. If not, then an account creation
 	 * process will need to be created on the front-end which will require UI work.
 	 */
@@ -149,7 +149,7 @@ export default class PluginInterface extends Plugin {
 	/***
 	 * Takes a transaction payload and returns a flat array of participants.
 	 * EXAMPLES:
-	 * EOSIO: ['testaccount@active']
+	 * ROXE: ['testaccount@active']
 	 * ETHEREUM: ['0x....']
 	 */
 	actionParticipants(payload){}

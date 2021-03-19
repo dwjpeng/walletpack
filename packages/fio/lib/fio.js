@@ -27,7 +27,7 @@ const getApiInstance = rpc => {
 	return new Api(params)
 }
 
-export const eosjsUtil = getApiInstance();
+export const roxejsUtil = getApiInstance();
 
 const MAINNET_CHAIN_ID = '21dcae42c0182200e93f954a074011f9048a7624c6fe81d3c9541a614a88bd1c';
 
@@ -647,7 +647,7 @@ export default class FIO extends Plugin {
 				const chainAbi = await getChainData(network, `get_raw_abi`, {account_name:account}).catch(err => console.error(err)).then(x => x.abi);
 				if(!chainAbi) return console.error(`Could not fetch ABIs for ${account}`);
 				const rawAbi = base64ToBinary(chainAbi);
-				const abi = eosjsUtil.rawAbiToJson(rawAbi);
+				const abi = roxejsUtil.rawAbiToJson(rawAbi);
 				return { account, rawAbi, abi};
 			}));
 		} catch(e){

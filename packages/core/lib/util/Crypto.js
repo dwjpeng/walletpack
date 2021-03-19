@@ -1,4 +1,4 @@
-import ecc from 'eosjs-ecc';
+import ecc from 'roxejs-ecc';
 const {PrivateKey} = ecc;
 
 import PluginRepository from '../plugins/PluginRepository';

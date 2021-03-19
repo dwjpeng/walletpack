@@ -10,7 +10,7 @@ Currently being used in Scatter Desktop, Scatter Mobile, and Scatter Bridge.
 
 Install the core plus any blockchains you want to support
 ```
-npm i -S @walletpack/core @walletpack/eosio @walletpack/ethereum @walletpack/bitcoin @walletpack/tron
+npm i -S @walletpack/core @walletpack/roxe @walletpack/ethereum @walletpack/bitcoin @walletpack/tron
 ```
 
 ### Call initialize first.
@@ -33,13 +33,13 @@ WalletPack.initialize(
     // blockchains & blockchain plugins
 	{
 		blockchains:{
-			EOSIO:'eos',
+			ROXE:'roxe',
 			ETH:'eth',
 			// TRX:'trx',
 			BTC:'btc',
 		},
 		plugins:[
-			require('@walletpack/eosio').default,
+			require('@walletpack/roxe').default,
 			require('@walletpack/ethereum').default,
 			// require('@walletpack/tron').default,
 			require('@walletpack/bitcoin').default,
@@ -138,7 +138,7 @@ then process methods on it.
 
 ```js
 import PluginRepository from ...
-PluginRepository.plugin(Blockchains.EOSIO).method(...);
+PluginRepository.plugin(Blockchains.ROXE).method(...);
 ```
 
 

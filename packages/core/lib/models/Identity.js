@@ -119,7 +119,7 @@ export class LocationInformation {
 /*                 Identity                 */
 /********************************************/
 
-let {PrivateKey} = require('eosjs-ecc');
+let {PrivateKey} = require('roxejs-ecc');
 
 export default class Identity {
 

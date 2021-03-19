@@ -224,8 +224,8 @@ describe('fio', () => {
 	//         const content = {
 	// 	        payee_public_address:'test@test',
 	// 	        amount:'1.0000',
-	// 	        chain_code:'EOS',
-	// 	        token_code:'EOS',
+	// 	        chain_code:'ROXE',
+	// 	        token_code:'ROC',
 	// 	        memo:'Testing',
 	// 	        hash:'',
 	// 	        offline_url:'',

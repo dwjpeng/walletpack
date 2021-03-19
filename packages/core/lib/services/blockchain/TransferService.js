@@ -22,7 +22,7 @@ export default class TransferService {
         return this.baseTransfer(params);
     }
 
-    static async [Blockchains.EOSIO](params){
+    static async [Blockchains.ROXE](params){
     	params.recipient = params.recipient.toLowerCase();
         return this.baseTransfer(params);
     }
@@ -56,7 +56,7 @@ export default class TransferService {
 
     static getTransferId(transfer, blockchain){
 	    switch(blockchain){
-		    case Blockchains.EOSIO: return transfer.transaction_id;
+		    case Blockchains.ROXE: return transfer.transaction_id;
 		    case Blockchains.TRX: return transfer.txID;
 		    case Blockchains.ETH: return transfer.transactionHash;
 		    case Blockchains.BTC: return transfer.txid;

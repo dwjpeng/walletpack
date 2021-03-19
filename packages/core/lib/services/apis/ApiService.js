@@ -26,7 +26,7 @@ import Framework from "../utility/Framework";
 import EventService from "../utility/EventService";
 import SigningService from "../../services/secure/SigningService";
 
-import ecc from 'eosjs-ecc';
+import ecc from 'roxejs-ecc';
 
 let blocked = [];
 export default class ApiService {
@@ -297,7 +297,7 @@ export default class ApiService {
 			network = StoreService.get().state.scatter.settings.networks.find(x => x.unique() === Network.fromJson(network).unique());
 			if(!network) return resolve({id:request.id, result:Error.noNetwork()});
 
-			request.payload.memo = network.blockchain === 'eos' ? options.hasOwnProperty('memo') ? options.memo : '' : '';
+			request.payload.memo = network.blockchain === 'roxe' ? options.hasOwnProperty('memo') ? options.memo : '' : '';
 
 			request.payload.symbol = options.hasOwnProperty('symbol') ? options.symbol : network.systemToken().symbol;
 			request.payload.contract = options.hasOwnProperty('contract') ? options.contract : network.systemToken().contract;
